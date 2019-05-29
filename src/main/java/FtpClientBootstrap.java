@@ -37,10 +37,9 @@ public class FtpClientBootstrap {
         ftp.login(user, password);
         ftp.setFileType(FTP.BINARY_FILE_TYPE);
         ftp.enterLocalPassiveMode();
+
+
     }
-
-
-
 
 
     public void uploadFile(String localFileFullName, String fileName, String hostDir)
@@ -55,6 +54,7 @@ public class FtpClientBootstrap {
             else{
                 System.out.println("Upload failed");
             }
+            ftp.logout();
         }
     }
 
